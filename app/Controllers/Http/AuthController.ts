@@ -45,4 +45,9 @@ export default class AuthController {
     await auth.attempt(email, password)
     return response.redirect('/profile')
   }
+
+  public async logout({ auth, response }: HttpContextContract) {
+    await auth.logout()
+    return response.redirect('/')
+  }
 }

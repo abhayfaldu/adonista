@@ -29,3 +29,4 @@ Route.post('/signup', 'AuthController.signup')
 
 Route.get('/login', async ({ view }) => view.render('login'))
 Route.post('/login', 'AuthController.login')
+Route.post('/logout', 'AuthController.logout')
