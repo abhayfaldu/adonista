@@ -22,8 +22,10 @@ import Route from '@ioc:Adonis/Core/Route'
 import AuthController from 'App/Controllers/Http/AuthController'
 
 Route.get('/', async ({ view }) => view.render('welcome'))
+Route.get('/profile', async ({ view }) => view.render('profile')).middleware('auth')
 
 Route.get('/signup', async ({ view }) => view.render('signup'))
 Route.post('/signup', 'AuthController.signup')
 
 Route.get('/login', async ({ view }) => view.render('login'))
+Route.post('/login', 'AuthController.login')
